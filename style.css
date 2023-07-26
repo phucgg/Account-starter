@@ -1,99 +1,137 @@
-body{
-    margin: 0;
-}
-.clearfix{
-    clear: both;
-}
-.video-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: -1;
-}
-.video-container video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -2;
-  }
-  #header{
-    border-bottom: 1px solid;
-  }
-  
-ul li{
-    list-style: none;
-}
-#wrapper{
-    width: 960px;
-    margin: 0px auto;
-}
-ul#mainmenu li{
-    float: left;
-}
-#logo {
-    float: left;
-height: 65px;
-width: auto;
-padding: 0px 0px 10px 0px;
-margin: 0;
-}
-#nameweb{
-    float: left;
-    text-decoration: none;
-    font-family:'Courier New', Courier, monospace, Arial, sans-serif;
-    padding: 15px 10px 10px 10px;
-font-size: 30px;
-margin: 0px;
-color: aqua;
-}
-ul#mainmenu{
-    float: right;
-    padding: 8px 15px;
-}
-ul#mainmenu li a{
-    padding: 35px 15px;
-    text-decoration: none;
-    color: #00FF00;
-}
-#maintext{
-    text-align: center;
-    margin: auto;
-    font-size: 29px
+body {
+  margin: 0;
 }
 
-    @keyframes rainbow {
-        0% {
-          color: red;
-        }
-        14% {
-          color: orange;
-        }
-        28% {
-          color: yellow;
-        }
-        42% {
-          color: green;
-        }
-        56% {
-          color: blue;
-        }
-        70% {
-          color: indigo;
-        }
-        84% {
-          color: violet;
-        }
-        100% {
-          color: red;
-        }
-      }
-      
-      p span {
-        animation: rainbow 1s infinite;
-      }
+.clearfix {
+  clear: both;
+}
+
+.video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+#header {
+  border-bottom: 1px solid;
+}
+
+ul li {
+  list-style: none;
+}
+
+#wrapper {
+  width: 960px;
+  margin: 0 auto;
+}
+
+ul#mainmenu li {
+  float: left;
+}
+
+#logo {
+  float: left;
+  height: 65px;
+  width: auto;
+  padding: 0px 0px 10px 0px;
+  margin: 0;
+}
+
+#nameweb {
+  float: left;
+  text-decoration: none;
+  font-family: 'Courier New', Courier, monospace, Arial, sans-serif;
+  padding: 15px 10px 10px 10px;
+  font-size: 30px;
+  margin: 0px;
+  color: aqua;
+}
+
+ul#mainmenu {
+  float: right;
+  padding: 8px 15px;
+}
+
+ul#mainmenu li a {
+  padding: 35px 15px;
+  text-decoration: none;
+  color: #00FF00;
+}
+
+#maintext {
+  text-align: center;
+  font-size: 29px;
+  margin: 0;
+  padding: 0;
+  padding-under: 10px;
+}
+
+@keyframes rainbow {
+  0% {
+      color: red;
+  }
+  14% {
+      color: orange;
+  }
+  28% {
+      color: yellow;
+  }
+  42% {
+      color: green;
+  }
+  56% {
+      color: blue;
+  }
+  70% {
+      color: indigo;
+  }
+  84% {
+      color: violet;
+  }
+  100% {
+      color: red;
+    }
+}
+
+
+p span {
+  animation: rainbow 1s infinite;
+}
+#iframe-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+#iframe-container .button-container {
+  margin-top: 20px; /* Khoảng cách giữa iframe và nút "Switch" */
+}
+#switchButton {
+  font-size: 24px; /* Kích thước của nút */
+  padding: 12px 24px; /* Khoảng cách bên trong nút */
+  background-color: #06f011; /* Màu nền của nút */
+  color: #ffffff; /* Màu chữ của nút */
+  border: none; /* Xóa viền của nút */
+  border-radius: 4px; /* Bo tròn góc của nút */
+  cursor: pointer;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Đổ bóng cho nút */
+}
+
+#switchButton:hover {
+  background-color: #db0b0b; /* Màu nền của nút khi hover */
+}

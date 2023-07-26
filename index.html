@@ -43,7 +43,27 @@
     <span class="name">E-Game From Group E</span>
   </p>
 </div>
-  <iframe style="max-width:100%" src="https://wordwall.net/embed/25d55d6ee8fa47e9a4771ec850109392?themeId=44&templateId=73&fontStackId=0" width="500" height="380" frameborder="0" allowfullscreen></iframe>
+<div id="iframe-container">
+  <div style="width: 1080px; height: 720px;">
+      <iframe id="iframe" src="https://wordwall.net/embed/25d55d6ee8fa47e9a4771ec850109392?themeId=44&templateId=73&fontStackId=0" width="100%" height="100%" frameborder="0"></iframe>
+  </div>
+  <div class="button-container">
+      <button id="switchButton">NEXT GAME</button>
+  </div>
+</div>
 
+<!-- Chèn mã JavaScript ở cuối phần body -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      const switchButton = document.getElementById("switchButton");
+      const iframe = document.getElementById("iframe");
+
+      // Xử lý sự kiện khi nhấn nút
+      switchButton.addEventListener("click", function () {
+          // Thay đổi nguồn của iframe
+          iframe.src = "https://example.com/another-url"; // Thay thế URL mới ở đây
+      });
+  });
+</script>
     </body>
 </html>
