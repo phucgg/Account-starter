@@ -6,10 +6,10 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-g7VpA8yjKoVckI0m1X7QwrJmZl3AvcKj3lPHeWM03/8dwwLVfztVpWXjXdLXtJ1zWkS6Jf5h5orFy5vB8+ex4Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
     </head>
     <!-- Phần Thân -->
     <body>
+        <div id="particles-js"></div>
     <div class="video-container">
     <video autoplay muted loop>
       <source src="video/video.mp4" type="video/mp4">
@@ -19,13 +19,13 @@
 <div id="header">
 <a href="index.html">
 <div><img id="logo"src="img/imgmain.jpg" alt="index.html">
-<p id="nameweb">PhucGG</p>
+<p id="nameweb">Group E</p>
 </div>
 </a>
 <ul id="mainmenu">
-<li><a href="index.html">Trang Chủ</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="howtoplay.html">Guide</a></li>
+<li><a href="index.html">Home</a></li>
+<li><a href="introduction.html">Introduction</a></li>
+<li><a href="tutorial.html">Tutorial</a></li>
 <li><a href="infor.html">Contact</a></li>
 </ul>
 <div class="clearfix"></div>
@@ -40,30 +40,83 @@
   <span class="color-5"> </span>
   <span class="color-6"> </span>
   <span class="color-7"> </span>
-    <span class="name">E-Game From Group E</span>
+    <span class="name">PLAY TO LEARN</span>
   </p>
-</div>
-<div id="iframe-container">
-  <div style="width: 1080px; height: 720px;">
-      <iframe id="iframe" src="https://wordwall.net/embed/25d55d6ee8fa47e9a4771ec850109392?themeId=44&templateId=73&fontStackId=0" width="100%" height="100%" frameborder="0"></iframe>
-  </div>
-  <div class="button-container">
-      <button id="switchButton">NEXT GAME</button>
-  </div>
 </div>
 
 <!-- Chèn mã JavaScript ở cuối phần body -->
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-      const switchButton = document.getElementById("switchButton");
-      const iframe = document.getElementById("iframe");
 
-      // Xử lý sự kiện khi nhấn nút
-      switchButton.addEventListener("click", function () {
-          // Thay đổi nguồn của iframe
-          iframe.src = "https://example.com/another-url"; // Thay thế URL mới ở đây
-      });
-  });
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const previousButton = document.getElementById("previousButton");
+        const nextButton = document.getElementById("nextButton");
+        const iframe = document.getElementById("iframe");
+
+        // Mảng chứa các URL của các iframe
+        const iframeUrls = [
+            "https://wordwall.net/embed/19f2a18f0f7e4380a573ff0581f6e839?themeId=1&templateId=5&fontStackId=0",
+            "https://wordwall.net/embed/6158e41f639e4b20bf5f845c6b7ed9ae?themeId=21&templateId=69&fontStackId=0",
+            "https://wordwall.net/embed/bbaa861fd3c74c6eae3545d4e459b738?themeId=1&templateId=38&fontStackId=0",
+            "https://example.com/another-url2",
+            // Thêm các URL khác nếu cần
+        ];
+
+        let currentIndex = 0; // Vị trí hiện tại của iframe trong mảng
+
+        // Xử lý sự kiện khi nhấn nút Next
+        nextButton.addEventListener("click", function () {
+            // Chuyển đổi nguồn của iframe
+            currentIndex = (currentIndex + 1) % iframeUrls.length;
+            iframe.src = iframeUrls[currentIndex];
+        });
+
+        // Xử lý sự kiện khi nhấn nút Previous
+        previousButton.addEventListener("click", function () {
+            // Chuyển đổi nguồn của iframe
+            currentIndex = (currentIndex - 1 + iframeUrls.length) % iframeUrls.length;
+            iframe.src = iframeUrls[currentIndex];
+        });
+    });
+</script>
+<iframe id="iframe" src="https://wordwall.net/embed/19f2a18f0f7e4380a573ff0581f6e839?themeId=1&templateId=5&fontStackId=0"></iframe>
+<div id="button-game">
+<button id="previousButton">Previous Game</button>
+<button id="nextButton">Next Game</button>
+</div>
+
+<script>
+  function showPopup() {
+      var popupContainer = document.createElement("div");
+      popupContainer.id = "popup-container";
+
+      var popupText = document.createElement("p");
+      popupText.id = "popup-text";
+      popupText.innerText = "- Welcome to E-Game from Group E Vip Pro.\n- Please read the TUTORIAL (in head page) first to know how to play";
+
+      var closeButton = document.createElement("button");
+      closeButton.innerText = "Close";
+      closeButton.onclick = function() {
+          popupContainer.style.display = "none";
+          localStorage.setItem("popupDisplayed", "false");
+      };
+
+      popupContainer.appendChild(popupText);
+      popupContainer.appendChild(closeButton);
+      document.body.appendChild(popupContainer);
+
+      var isPopupDisplayed = localStorage.getItem("popupDisplayed");
+      if (isPopupDisplayed === null || isPopupDisplayed === "true") {
+          popupContainer.style.display = "block";
+      } else {
+          popupContainer.style.display = "none";
+      }
+
+      // Xóa dữ liệu LocalStorage khi trang web được tải lên
+      localStorage.removeItem("popupDisplayed");
+  }
+
+  // Hiển thị pop-up khi trang web tải xong
+  window.onload = showPopup;
 </script>
     </body>
 </html>

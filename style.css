@@ -41,6 +41,7 @@ ul li {
 
 ul#mainmenu li {
   float: left;
+  font-size: 22px;
 }
 
 #logo {
@@ -74,7 +75,7 @@ ul#mainmenu li a {
 
 #maintext {
   text-align: center;
-  font-size: 29px;
+  font-size: 35px;
   margin: 0;
   padding: 0;
   padding-under: 10px;
@@ -105,33 +106,121 @@ ul#mainmenu li a {
   100% {
       color: red;
     }
-}
-
-
+  }
 p span {
-  animation: rainbow 1s infinite;
+  animation: rainbow 2s infinite;
 }
-#iframe-container {
+#container {
+  position: relative;
+}
+.glass-effect {
+  background-color: rgba(11, 123, 214, 0.5); /* Màu nền với độ mờ */
+  backdrop-filter: blur(10px); /* Độ mờ nền (số càng lớn, càng mờ) */
+  border-radius: 8px;
+  padding: 30px;
+  width: 935px;
+  height: 800px;
+  margin: 20px auto; 
+}
+#text-tutorial {
+  word-break: break-word;
+  font-family: "Arial", sans-serif;
+    font-size: 40px;
+    line-height: 2.8rem;
+    color: #b4ff04;
+}
+#text-infor {
+  word-break: break-word;
+    font-family: "Roboto",sans-serif;
+    font-size: 20px;
+    color: #c9ff04;
+    text-align: center;
+}
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color:#ff04c0;
+}
+
+.member-list {
+  list-style: table;
+  padding: 0;
+  font-size: 30px;
+}
+
+.member-item {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100vh;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc; /* Thêm kẻ bảng dưới mỗi thành viên */
+  padding-bottom: 10px; /* Khoảng cách giữa kẻ bảng và phần tử phía dưới */
 }
 
-#iframe-container .button-container {
-  margin-top: 20px; /* Khoảng cách giữa iframe và nút "Switch" */
+.student-name {
+  margin-right: 0px;
 }
-#switchButton {
-  font-size: 24px; /* Kích thước của nút */
-  padding: 12px 24px; /* Khoảng cách bên trong nút */
-  background-color: #06f011; /* Màu nền của nút */
-  color: #ffffff; /* Màu chữ của nút */
-  border: none; /* Xóa viền của nút */
-  border-radius: 4px; /* Bo tròn góc của nút */
+
+.student-id {
+  font-style: italic;
+}
+
+iframe {
+  width: 1080px;
+  height: 720px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* CSS cho nút */
+.button-container {
+  display: block;
+  margin-top: 10px;
+}
+
+#button-game {
+  display: block;
+  margin: 10px 90px 0px 840px;
+  font-size: 30px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#popup-container {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+}
+
+#popup-container.show {
+  display: block;
+}
+
+#popup-text {
+  font-size: 30px;
+  color: #ff0e0e;
+  line-height: 1.6;
+}
+
+button {
+  margin-top: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
   cursor: pointer;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Đổ bóng cho nút */
 }
 
-#switchButton:hover {
-  background-color: #db0b0b; /* Màu nền của nút khi hover */
+button:hover {
+  background-color: #0056b3;
 }
