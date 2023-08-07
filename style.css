@@ -125,8 +125,13 @@ p span {
 #text-tutorial {
   word-break: break-word;
   font-family: "Arial", sans-serif;
-    font-size: 40px;
-    line-height: 2.8rem;
+    font-size: 25px;
+    color: #b4ff04;
+}
+#text-intro {
+  word-break: break-word;
+  font-family: "Arial", sans-serif;
+    font-size: 25px;
     color: #b4ff04;
 }
 #text-infor {
@@ -212,15 +217,54 @@ button:hover {
 }
 
 button {
-  margin-top: 10px;
   background-color: #007bff;
   color: #fff;
   border: none;
-  padding: 8px 16px;
+  padding: 15px 19px;
+  margin-bottom: 20px;
   border-radius: 4px;
-  cursor: pointer;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #b30000;
 }
+/* Styles for the Footer */
+footer {
+  background-color: #46219e;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-content p {
+  margin-bottom: 10px;
+}
+
+.social-media a {
+  display: inline-block;
+  margin: 0 5px;
+  border-radius: 50%;
+  background-color: #4267B2;
+  padding: 8px;
+}
+
+.social-media img {
+  vertical-align: middle;
+}
+
+.social-media a:hover {
+  background-color: #29487D;
+}
+
+/* Optional: Add hover effect to the footer text */
+.footer-content p:hover {
+  color: #ffcc00;
+  cursor: pointer;
+}
+
