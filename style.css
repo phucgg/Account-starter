@@ -27,7 +27,7 @@ body {
 }
 
 #header {
-  border-bottom: 1px solid;
+  border-bottom: 2px solid;
 }
 
 ul li {
@@ -35,10 +35,8 @@ ul li {
 }
 
 #wrapper {
-  width: 960px;
   margin: 0 auto;
 }
-
 ul#mainmenu li {
   float: left;
   font-size: 22px;
@@ -48,7 +46,7 @@ ul#mainmenu li {
   float: left;
   height: 65px;
   width: auto;
-  padding: 0px 0px 10px 0px;
+  padding: 5px 0px 5px 0px;
   margin: 0;
 }
 
@@ -64,11 +62,11 @@ ul#mainmenu li {
 
 ul#mainmenu {
   float: right;
-  padding: 8px 15px;
+  padding: 8px 0px;
 }
 
 ul#mainmenu li a {
-  padding: 35px 15px;
+  padding: 35px 15px 26px 15px;
   text-decoration: none;
   color: #00FF00;
 }
@@ -134,40 +132,6 @@ p span {
     font-size: 25px;
     color: #b4ff04;
 }
-#text-infor {
-  word-break: break-word;
-    font-family: "Roboto",sans-serif;
-    font-size: 20px;
-    color: #c9ff04;
-    text-align: center;
-}
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
-  color:#ff04c0;
-}
-
-.member-list {
-  list-style: table;
-  padding: 0;
-  font-size: 30px;
-}
-
-.member-item {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-  border-bottom: 1px solid #ccc; /* Thêm kẻ bảng dưới mỗi thành viên */
-  padding-bottom: 10px; /* Khoảng cách giữa kẻ bảng và phần tử phía dưới */
-}
-
-.student-name {
-  margin-right: 0px;
-}
-
-.student-id {
-  font-style: italic;
-}
 
 iframe {
   width: 1080px;
@@ -176,33 +140,17 @@ iframe {
   margin: 0 auto;
 }
 
-/* CSS cho nút */
-.button-container {
-  display: block;
-  margin-top: 10px;
-}
-
-#button-game {
-  display: block;
-  margin: 10px 90px 0px 840px;
-  font-size: 30px;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
 #popup-container {
   display: none;
   position: fixed;
-  top: 50%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 20px;
-  background-color: #f0f0f0;
-  border: 2px solid #ccc;
+  background-color: #fcfcfc;
+  border: 10px solid rgb(178, 248, 248);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  border-radius: 5px;
   font-family: Arial, sans-serif;
 }
 
@@ -212,59 +160,119 @@ button:hover {
 
 #popup-text {
   font-size: 30px;
-  color: #ff0e0e;
+  color: #0ebbff;
   line-height: 1.6;
 }
-
-button {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 15px 19px;
-  margin-bottom: 20px;
-  border-radius: 4px;
+.image-container {
+  text-align: center; /* Căn giữa các phần tử */
 }
 
-button:hover {
-  background-color: #b30000;
+.image-item{
+  display: inline-block; /* Hiển thị trong cùng một hàng */
+  text-align: left; /* Đặt lại căn lề trái (nếu cần) */
+  margin: 35px; /* Điều chỉnh khoảng cách giữa các mục */
+  width: 20%; /* Điều chỉnh kích thước ô liên kết tùy theo thiết kế của bạn */
+  border: 2px solid #06f3e7;
+  border-radius: 10px;
+  padding: 10px;
+  text-decoration: none;
+  backdrop-filter: blur(5px); /* Điều chỉnh mức độ mờ tùy ý (ở đây là 5px) */
+  background-color: rgba(255, 255, 255, 0.5); /* Điều chỉnh màu nền và độ trong suốt (ở đây là 50%) */
 }
-/* Styles for the Footer */
-footer {
-  background-color: #46219e;
-  color: #fff;
-  padding: 20px;
+
+
+.image-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.image-title {
+  font-weight: bold;
+  margin: 10px 0;
+  color: #3fff04;
+}
+.image-item p{
+  color: red;
+  font-weight: bold;
+  font-family:'Times New Roman', Times, serif;
+}
+.image-description {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  margin: 0;
+  color: rgb(255, 51, 0);
+}
+
+.main-footer {
+  display: flex;
+  background-color: #333;
+  margin-top: 300px;
+  padding: 2px;
+  justify-content: space-between;
+  border-bottom: 1px solid #fff; /* Đường viền ngăn cách dưới cùng */
+}
+
+
+.footer-logo {
+  flex: 1;
+  padding: 1px;
+  text-align: center;
+}
+div#logovaten img{
+display: block;
+float: left;
+}
+div#logovaten h1{
+  display: block;
+  color: #06f3e7;
+}
+.footer-logo img {
+  width: 100px;
+  border-radius: 100px;
+}
+
+.footer-section {
+  flex: 1;
+  padding: 10px;
   text-align: center;
 }
 
-.footer-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.footer-section h3 {
+  font-size: 18px;
 }
 
-.footer-content p {
-  margin-bottom: 10px;
+.footer-section p {
+  font-size: 14px;
 }
 
-.social-media a {
-  display: inline-block;
-  margin: 0 5px;
-  border-radius: 50%;
-  background-color: #4267B2;
-  padding: 8px;
+.social-links {
+  list-style: none;
+  padding: 0;
 }
 
-.social-media img {
-  vertical-align: middle;
+.social-links li {
+  display: block;
+  margin: 15px 0;
 }
 
-.social-media a:hover {
-  background-color: #29487D;
+.social-links a {
+  text-decoration: none;
+  color: white;
+}
+.social-links a i {
+  margin-right: 5px; /* Khoảng cách giữa biểu tượng và văn bản */
+  font-size: 23px; /* Kích thước biểu tượng */
+  color: #333; /* Màu sắc biểu tượng */
+}
+.social-links a:hover {
+  text-decoration: underline;
 }
 
-/* Optional: Add hover effect to the footer text */
-.footer-content p:hover {
-  color: #ffcc00;
-  cursor: pointer;
+.footer-bottom {
+  text-align: center;
+  padding: 21px 0;
+  background-color: #333;
+  color: white;
 }
 
